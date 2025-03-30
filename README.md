@@ -22,5 +22,5 @@ This project demonstrates how to create a real-time data update system using Web
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/realtime-websocket.git
+git clone https://github.com/Ordnarycoder/Realtime-Websocket-Example-45.git
 cd realtime-websocket
