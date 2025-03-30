@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real-Time Data Update</title>
+</head>
+<body>
+  <h1>Real-Time Data Updates</h1>
+  <div id="data">Connecting to server...</div>
+
+  <script>
+    // Create a new WebSocket connection to the server
+    const ws = new WebSocket('ws://localhost:8080');
+
+    // Event handler for when the connection opens
+    ws.onopen = () => {
+      document.getElementById('data').innerText = 'Connected to the server.';
+    };
+
+    // Event handler for receiving messages from the server
+    ws.onmessage = (event) => {
+      document.getElementById('data').innerText = event.data;
+    };
+
+    // Event handler for errors
+    ws.onerror = (error) => {
+      console.error('WebSocket Error:', error);
+    };
+
+    // Event handler for when the connection is closed
+    ws.onclose = () => {
+      document.getElementById('data').innerText = 'Connection closed.';
+    };
+  </script>
+</body>
+</html>
